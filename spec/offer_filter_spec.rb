@@ -6,5 +6,14 @@ describe 'Offer filter' do
         names = %w(foo bar)
         filter(names).should == %w(foo bar)
     end
-    it 'removes duplicates'
+    it 'removes duplicates' do
+        names = %w(foo.pdf foo.doc)
+        filter(names).should == ['foo.pdf']
+    end
+end
+
+describe 'Filename prefix' do
+    it 'is the full name without the extension' do
+        prefix('foo.pdf').should == 'foo'
+    end
 end
