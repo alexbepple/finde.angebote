@@ -21,3 +21,13 @@ describe 'Filename prefix' do
         prefix('foo.pdf').should == 'foo'
     end
 end
+
+describe 'Offers' do
+    it 'are sorted by date' do
+        offer_sort_key('foo-2010-01-02').should < offer_sort_key('bar-2010-01-03')
+    end
+    it 'without date are sorted before those with date' do
+        offer_sort_key('foo').should < offer_sort_key('foo-2010-01-02')
+    end
+end
+
