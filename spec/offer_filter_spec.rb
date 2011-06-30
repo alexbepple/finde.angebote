@@ -10,6 +10,10 @@ describe 'Offer filter' do
         names = %w(foo.pdf foo.doc)
         filter(names).should == ['foo.pdf']
     end
+    it 'prefers PDFs' do
+        names = %w(baz.doc baz.pdf)
+        filter(names).should == ['baz.pdf']
+    end
 end
 
 describe 'Filename prefix' do
