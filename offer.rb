@@ -9,10 +9,7 @@ def select_name(names)
 end
 
 def filter(full_names)
-    both_names = full_names.map { |name| {prefix(name) => [name]} }
-    names_by_prefix = both_names.inject do |acc, val| 
-        acc.merge(val) { |key, v1, v2| v1 + v2 }
-    end
+    names_by_prefix = full_names.group_by { |name| prefix(name) }
     return names_by_prefix.keys.map { |key| select_name(names_by_prefix[key]) }
 end
 
