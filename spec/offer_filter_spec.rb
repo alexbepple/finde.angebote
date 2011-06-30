@@ -26,6 +26,7 @@ describe 'Offers' do
     test_data = [
         ['are sorted by date', 'foo-2010-01-02', 'bar-2010-01-03'],
         ['without date come before those with date', 'foo', '20100101'],
+        ['can have a 2-digit year', '20100101', '110101'],
     ]
     test_data.each do |set|
         it set[0] do
