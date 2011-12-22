@@ -6,4 +6,4 @@ while [ -h "$PRG" ]; do
 done
 PRG_HOME=`dirname "$PRG"`
 
-find . -iname $1 | $PRG_HOME/filtere.und.sortiere.angebote.rb
+find . -iname "*$1*" | $PRG_HOME/filtere.und.sortiere.angebote.rb
